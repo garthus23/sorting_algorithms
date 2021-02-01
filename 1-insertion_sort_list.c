@@ -90,5 +90,4 @@ void insertion_sort_list(listint_t **list)
 		else
 			break;
 	}
-	print_list(*list);
 }
