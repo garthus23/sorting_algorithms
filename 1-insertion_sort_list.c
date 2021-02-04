@@ -76,18 +76,22 @@ void insertion_sort_list(listint_t **list)
 
 	node = *list;
 	node = node->next;
-	while (node)
+
+	if (*list)
 	{
-		save = node;
-		while (node->n < node->prev->n)
+		while (node)
 		{
-			if (move_node(list, node) == 1)
+			save = node;
+			while (node->n < node->prev->n)
+			{
+				if (move_node(list, node) == 1)
+					break;
+			}
+			node = save;
+			if (node->next)
+				node = node->next;
+			else
 				break;
 		}
-		node = save;
-		if (node->next)
-			node = node->next;
-		else
-			break;
 	}
 }
