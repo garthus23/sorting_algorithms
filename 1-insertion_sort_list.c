@@ -74,11 +74,10 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *node, *save;
 
-	node = *list;
-	node = node->next;
-
-	if (*list)
+	if (list)
 	{
+		node = *list;
+		node = node->next;
 		while (node)
 		{
 			save = node;
